@@ -1,0 +1,30 @@
+name: 'test result collector'
+description: 'upload test result to snowflake'
+inputs:
+  snowflake_account:
+    description: 'snowflake account'
+    required: true
+  snowflake_username:
+    description: 'snowflake username'
+    required: true
+  snowflake_password:
+    description: 'snowflake password'
+    required: true
+  snowflake_database:
+    description: 'snowflake database'
+    required: true
+  snowflake_schema:
+    description: 'snowflake schema'
+    required: true
+  snowflake_table:
+    description: 'snowflake table'
+    required: true
+  report_json_file_path:
+    description: 'filepath of test result'
+    required: true
+outputs:
+  result:
+    description: 'upload status'
+runs:
+  using: 'node20'
+  main: 'index.js'
